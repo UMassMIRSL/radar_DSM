@@ -98,7 +98,7 @@ def radargrammetry_full(img_hi_file, img_lo_file, fmt, dim, num_cpu, out_file, s
         i = 0
         processes = []
         while i < num_cpu/4:
-            kwargs = {'src_dir': src_dir, 'dem_file':dem_file, 'out_dir':out_dir, 'dB':dB, 'img_med': img_med, 'min_disp':min_disp, 'max_disp':max_disp, 'P1':P1, 'P2':P2, 'offset':offset, 'fill':fill, 'msl':msl, 'out_dem_file':out_dem_file+f'_{c}_dem.tif', 'compare':compare, 'cleanup':cleanup, 'min_ht':min_ht, 'max_ht':max_ht, 'no_data_out':no_data_out, 'min_cts':min_cts, 'nl_x':nl_x, 'nl_y':nl_y}
+            kwargs = {'src_dir': src_dir, 'dem_file':dem_file, 'out_dir':out_dir, 'dB':dB, 'img_med': img_med, 'min_disp':min_disp, 'max_disp':max_disp, 'P1':P1, 'P2':P2, 'offset':offset, 'fill':fill, 'msl':msl, 'out_dem_file':out_dem_file+f'_tile_{c}.tif', 'compare':compare, 'cleanup':cleanup, 'min_ht':min_ht, 'max_ht':max_ht, 'no_data_out':no_data_out, 'min_cts':min_cts, 'nl_x':nl_x, 'nl_y':nl_y}
             sys.stdout.flush()
             processes.append(mp.Process(target = radargrammetry, args=(img_hi_file, img_lo_file, fmt, ctr_list[c], dim), kwargs=kwargs))
             processes[-1].start()
@@ -112,9 +112,17 @@ def radargrammetry_full(img_hi_file, img_lo_file, fmt, dim, num_cpu, out_file, s
     dusk = t.time()
     print('\t(done in {:.2f}s)'.format(dusk - dawn))
     print('merging tiles...')
-    tile_list = glob.glob(out_dem_file+'_*_dem.tif')
+    tile_list = glob.glob(out_dem_file+'_tile_*.tif')
+    vrt_list = glob.glob(out_dem_file+'_tile_*.vrt')
     warp_opt = gdal.WarpOptions(srcNodata = no_data_out, dstNodata = no_data_out)
     gdal.Warp(out_file, tile_list, options = warp_opt)
+    if cleanup:
+        for i in np.arange(len(tile_list)):
+            if os.path.isfile(tile_list[i]):
+                os.remove(tile_list[i])
+        for i in np.arange(len(vrt_list)):
+            if os.path.isfile(vrt_list[i]):
+                os.remove(vrt_list[i])
     
 def radargrammetry(img_lo_file, img_hi_file, fmt, ctr, dim, src_dir = ".", dem_file = None , out_dir = '.', dB = False, img_med = 5, min_disp = 0, max_disp = 64, P1 = 50, P2 = 350, offset = None, fill = False, msl = None, out_dem_file = None, compare = False, cleanup = False, min_ht = None, max_ht = None, no_data_out = np.nan, nl_x = 1, nl_y = 1, min_cts = 20):
     """
