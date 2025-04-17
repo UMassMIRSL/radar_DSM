@@ -23,7 +23,8 @@ radargrammetry.py is the main file and contains the main methods of the code: ra
 An example code using SAR imagery from Capella Space's Open Data Repository is located at: https://github.com/UMassMIRSL/radar_DSM/blob/main/radar_DSM_example_capella.py
 The SAR imagery must be downloaded from the Open Data Repository as described in the example file
 
-# DEPENDENCIES
+# INSTALLATION
+The.py files should be downloaded into a directory named radar_DSM. This directory should be added to your PYTHONPATH variable.
 This package has been tested using Conda and Python 3.12.8. Dependencies from the Conda environment are located in requirements.txt
 
 
