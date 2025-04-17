@@ -14,7 +14,7 @@ TerraSAR-X/TanDEM-X:
         Geocoded Ellipsoid Corrected
                 -Stripmap
 
-The methodology of the package is described in: S. Beninati and S. Frasier, "A radargrammetry algorithm for high-resolution SAR satellite constellations," unpublished.
+The methodology of the package is described in: S. Beninati and S. Frasier (2025 submitted), "A radargrammetry algorithm for high-resolution SAR satellite constellations."
 
 # CREDIT
 sgm5.py modified from:
