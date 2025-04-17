@@ -18,7 +18,7 @@ The methodology of the package is described in: S. Beninati and S. Frasier, "A r
 
 # CREDIT
 sgm5.py modified from:
-DA. Beaupre, “Semi-global matching,” github.com. [https://github.com/beaupreda/semi-globalmatching](https://github.com/beaupreda/semi-global-matching) (accessed Jul. 10, 2023).
+DA. Beaupre, “Semi-global matching,” github.com. [https://github.com/beaupreda/semi-global-matching](https://github.com/beaupreda/semi-global-matching) (accessed Jul. 10, 2023).
 
 # CITATION
 S. Beninati and S. Frasier, "radar_DSM," github.com. https://github.com/UMassMIRSL/radar_DSM, (<date accessed>).
