@@ -1,6 +1,6 @@
 # radar_DSM
 generate Digital Surface Models from Capella and TerraSAR-X/TanDEM-X SAR imagery
-
+![DSM of Savannah, GA, USA](https://github.com/UMassMIRSL/radar_DSM/blob/main/savannah_example_DSM.png)
 
 # USAGE
 radar_DSM is a Python package for generating Digital Surface Models (DSMs) from Synthetic Aperture Radar (SAR) data using stereo radargrammetry. It has been tested using Rocky Linux 9/RHEL9 on the following data formats:
