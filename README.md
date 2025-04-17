@@ -19,7 +19,7 @@ The methodology of the package is described in: S. Beninati and S. Frasier (2025
 
 radargrammetry.py is the main file and contains the main methods of the code: radargrammetry() and radargrammetry_full()
 
-#EXAMPLE
+# EXAMPLE
 An example code using SAR imagery from Capella Space's Open Data Repository is located at: https://github.com/UMassMIRSL/radar_DSM/blob/main/radar_DSM_example_capella.py
 The SAR imagery must be downloaded from the Open Data Repository as described in the example file
 
