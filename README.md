@@ -32,5 +32,7 @@ This package has been tested using Conda and Python 3.12.8. Dependencies from th
 sgm5.py modified from:
 DA. Beaupre, “Semi-global matching,” github.com. [https://github.com/beaupreda/semi-global-matching](https://github.com/beaupreda/semi-global-matching) (accessed Jul. 10, 2023).
 
+This project was supported by the Office of Naval Research Code 322 under grant N00014-2112550, National Oceanographic Partnership Program (NOPP): Hurricane Coastal Impacts.
+
 # CITATION
 S. Beninati and S. Frasier, "radar_DSM," github.com. https://github.com/UMassMIRSL/radar_DSM, (Accessed: date accessed). doi: https://doi.org/10.5281/zenodo.15242906
